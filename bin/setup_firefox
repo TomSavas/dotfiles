@@ -1,0 +1,7 @@
+#!/bin/sh
+
+config_dir="$(find $HOME/.mozilla/firefox -iname '*.default' -type d)"
+mkdir -p "$config_dir"
+
+ln -s $HOME/.config/firefox/userChrome.css "$config_dir"/userChrome.css 
+ln -s $HOME/.config/firefox/userContent.css "$config_dir"/userContent.css 

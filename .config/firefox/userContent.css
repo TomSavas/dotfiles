@@ -1,0 +1,6 @@
+@import url('file:///home/savas/.config/firefox/firefoxColors.css');
+
+:root {
+    scrollbar-color: var(--fg) var(--bg);
+    scrollbar-width: thin;
+}
