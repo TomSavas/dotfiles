@@ -22,14 +22,6 @@
     --url-fonts: "curie"; 
     --url-font-size: 11pt;
     --url-text-align: center;
-
-/*********************************/
-/**** SCROLL BAR CONFIG ****/
-/*********************************/
-  /*scrollbar-face-color: rgb(210,210,210); /* Firefox 63 compatibility */
-  /*scrollbar-track-color: rgb(46,54,69); /* Firefox 63 compatibility */
-    scrollbar-color: rebeccapurple green;
-      --scrollbar-width: thin;
 }
 
 /*********************************/
