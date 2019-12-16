@@ -1,0 +1,8 @@
+#!/bin/sh
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+echo ".dotfiles" >> .gitignore
+git clone --bare https://github.com/TomSavas/dotfiles.git $HOME/.doftiles
+
+dotfiles checkout
+dotfiles config status.showUntrackedFiles no

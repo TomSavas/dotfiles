@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat ~/.fehbg | grep -o "'.*'" | xargs -I '{}' i3lock -ti {}

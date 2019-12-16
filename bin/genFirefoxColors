@@ -1,0 +1,47 @@
+#!/bin/sh
+# Exports the .Xresources colors to a CSS file format for userChrome.css
+
+css_conf=$HOME/.config/firefox/firefoxColors.css
+
+# grab colors from .Xresources
+bg=$(xrdb -query | egrep "\.background:.+" | cut -f 2) 
+fg=$(xrdb -query | egrep "\.foreground:.+" | cut -f 2)
+color0=$(xrdb -query | egrep "\.color0:.+" | cut -f 2)
+color1=$(xrdb -query | egrep "\.color1:.+" | cut -f 2)
+color2=$(xrdb -query | egrep "\.color2:.+" | cut -f 2)
+color3=$(xrdb -query | egrep "\.color3:.+" | cut -f 2)
+color4=$(xrdb -query | egrep "\.color4:.+" | cut -f 2)
+color5=$(xrdb -query | egrep "\.color5:.+" | cut -f 2)
+color6=$(xrdb -query | egrep "\.color6:.+" | cut -f 2)
+color7=$(xrdb -query | egrep "\.color7:.+" | cut -f 2)
+color8=$(xrdb -query | egrep "\.color8:.+" | cut -f 2)
+color9=$(xrdb -query | egrep "\.color9:.+" | cut -f 2)
+color10=$(xrdb -query | egrep "\.color10:.+" | cut -f 2)
+color11=$(xrdb -query | egrep "\.color11:.+" | cut -f 2)
+color12=$(xrdb -query | egrep "\.color12:.+" | cut -f 2)
+color13=$(xrdb -query | egrep "\.color13:.+" | cut -f 2)
+color14=$(xrdb -query | egrep "\.color14:.+" | cut -f 2)
+color15=$(xrdb -query | egrep "\.color15:.+" | cut -f 2)
+
+cat > $css_conf <<-EOF
+:root {
+  --bg: $bg;
+  --fg: $fg;
+  --blk: $color0;
+  --red: $color1;
+  --grn: $color2;
+  --ylw: $color3;
+  --blu: $color4;
+  --mag: $color5;
+  --cyn: $color6;
+  --wht: $color7;
+  --bblk: $color8;
+  --bred: $color9;
+  --bgrn: $color10;
+  --bylw: $color11;
+  --bblu: $color12;
+  --bmag: $color13;
+  --bcyn: $color14;
+  --bwht: $color15;
+} 
+EOF

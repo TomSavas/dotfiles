@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Opens a new urxvt terminal in the same dir as the current terminal
+urxvt &
+disown
