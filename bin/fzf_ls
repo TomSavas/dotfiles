@@ -1,0 +1,36 @@
+#!/bin/sh
+
+function usage() {
+    echo "Usage: $0 [-d number] [-t <bcdpflsD>] PATH_TO_LS" 1>&2; exit 1;
+}
+
+function fzf_ls() {
+    echo $1/$(find $1 $2 -not -path $1 | rev | cut -d / -f 1 | rev | fzf $3)
+}
+
+while getopts ":d:t:" opt; do
+    case "${opt}" in
+        d)
+            depth=${OPTARG};;
+        t)
+            filetype=${OPTARG};;
+        *)
+            usage;;
+    esac
+done
+shift $((OPTIND-1))
+
+if [ $# -ne 1 ]; then
+    usage
+fi
+
+find_args=""
+if [ ! -z ${depth} ]; then
+    find_args="-maxdepth $depth"
+fi
+
+if [ ! -z ${filetype} ]; then
+    find_args="${find_args} -type $filetype"
+fi
+
+fzf_ls "$1" "$find_args" "$2"
