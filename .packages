@@ -1,0 +1,37 @@
+# Fonts
+
+# Applications
+firefox
+
+# Terminal related
+zsh
+tmux
+
+# Wm
+bspwm
+polybar
+
+# Wm related
+rofi
+
+# Utilities
+redshift
+scrot
+light
+wpg
+feh
+fzf
+
+
+
+# Dev related
+
+# Editors
+vim
+vundle-git # vim +PluginInstall +qall
+
+# Dev tools
+glslviewer-git
+
+# Libs
+nuclear-git
