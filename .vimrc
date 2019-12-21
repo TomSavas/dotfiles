@@ -31,8 +31,10 @@ call vundle#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'valloric/youcompleteme'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/fzf'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call vundle#end()
