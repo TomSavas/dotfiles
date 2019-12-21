@@ -1,0 +1,5 @@
+# git alias for dotfiles
+alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# navigation utils
+alias proj='cd "$(fzf_ls -d 1 -t d $HOME/Projects)"'
