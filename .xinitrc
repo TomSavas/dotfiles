@@ -2,10 +2,10 @@
 xrdb -load $HOME/.Xresources
 
 # Set the wallpaper
-~/.fehbg
+$HOME/.fehbg
 
 # Load keyboar config
-source .kbrc
+source $HOME/.kbrc
 
 # Launch WM
-exec awesome
+exec bspwm
