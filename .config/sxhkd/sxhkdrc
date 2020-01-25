@@ -19,7 +19,7 @@ XF86Audio{Raise,Lower}Volume
 	amixer set Master 5%{+,-}
 
 XF86AudioMute
-	amixer set Master toggle
+	amixer -q -D pulse sset Master toggle
 
 # Brightness controls
 XF86MonBrightness{Up,Down}
@@ -30,7 +30,7 @@ Print
 	scrot '%Y-%m-%d-%s_$wx$h.png' -e 'mv $f ~/Pictures/Screencaps/' 
 
 # reload sxhkd, polybar and bspwm config
-super + Escape
+super + shift + Escape
 	pkill -USR1 -x sxhkd ;\
 	pkill -USR1 -x polybar ;\
 	cat ~/.config/bspwm/bspwmrc | grep bspc | bash
