@@ -3,3 +3,10 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # navigation utils
 alias proj='cd "$(fzf_ls -d 1 -t d $HOME/Projects)"'
+alias music='cd "$(fzf_ls -t d $HOME/Music)"'
+
+# music
+alias rand-music='find "$(fzf_ls -t d $HOME/Music)" -type f | shuf | xargs -I{} mpv {}'
+
+# pull music from youtube video
+alias down-music='youtube-dl --extract-audio --audio-format mp3'
