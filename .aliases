@@ -6,7 +6,7 @@ alias proj='cd "$(fzf_ls -d 1 -t d $HOME/Projects)"'
 alias music='cd "$(fzf_ls -t d $HOME/Music)"'
 
 # music
-alias rand-music='find "$(fzf_ls -t d $HOME/Music)" -type f | shuf | xargs -I{} mpv {}'
+alias rand-music='mpv --shuffle "$(fzf_ls -t d $HOME/Music)"'
 
 # pull music from youtube video
 alias down-music='youtube-dl --extract-audio --audio-format mp3'
