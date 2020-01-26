@@ -1,3 +1,7 @@
 #!/bin/sh
 
-cat ~/.fehbg | grep -o "'.*'" | xargs -I '{}' i3lock -ti {}
+#cat ~/.fehbg | grep -o "'.*'" | xargs -I '{}' i3lock -ti {}
+wallpaper_path="$(cat ~/.fehbg | tail -n 1 | cut -d "'" -f 2)"
+display_size="$(xrandr | grep \* | tr -s ' ' | cut -d ' ' -f 2)"
+
+convert $wallpaper_path -resize $display_size RGB:- | i3lock --raw $display_size:rgb --image /dev/stdin --indpos="90:990" --radius=20 --veriftext="" --wrongtext="" --locktext="" --noinputtext=""
