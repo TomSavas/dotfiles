@@ -1,9 +1,0 @@
-# Keyboard config 
-
-# Change keyboard repeat rate
-xset r rate 200 25
-
-# Set keyboard options
-setxkbmap -layout us,lt
-setxkbmap -option 'grp:alt_shift_toggle'
-setxkbmap -option caps:escape

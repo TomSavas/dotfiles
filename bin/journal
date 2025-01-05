@@ -1,0 +1,14 @@
+#!/bin/sh
+
+LOG_DIR="$HOME/Documents/Journals"
+
+current_date=$(date +%F)
+current_time=$(date +"--- %H:%M ---")
+log_file_path=$LOG_DIR/$current_date
+new_heading="Journal entry for $current_date"
+
+if [ -f $log_file_path ]; then
+    vim -n -c "execute 'normal! Go' | execute 'normal! o' | execute 'normal! o' | execute 'normal! o$current_time' | execute 'normal! o' | set cc=81" $log_file_path
+else
+    vim -xn -c "execute 'normal! i$new_heading' | execute 'normal! o' | execute 'normal! o$current_time' | execute 'normal! o' | set cc=81" $log_file_path
+fi

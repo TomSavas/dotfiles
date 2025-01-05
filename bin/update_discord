@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd /opt
+rm -rf DiscordOLD
+mv Discord DiscordOLD
+
+wget -O discord.tar.gz "https://discord.com/api/download/stable?platform=linux&format=tar.gz"
+tar xfvz discord.tar.gz
+rm discord.tar.gz

@@ -5,7 +5,11 @@ function usage() {
 }
 
 function fzf_ls() {
-    echo $1/$(find $1 $2 -not -path $1 | rev | cut -d / -f 1 | rev | fzf $3)
+    if [[ $2 =~ "-type d" ]]; then
+        echo $1/$(find $1 $2 | tail -n +2 | rev | cut -d / -f 1 | rev | fzf $3)
+    else
+        echo $1/$(find $1 $2 | rev | cut -d / -f 1 | rev | fzf $3)
+    fi
 }
 
 while getopts ":d:t:" opt; do

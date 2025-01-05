@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xprop -id "$(bspc query -N -d focused -n .focused.window)" WM_CLASS | cut -d= -f2 | cut -d\" -f2
